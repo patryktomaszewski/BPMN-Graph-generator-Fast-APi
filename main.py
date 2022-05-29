@@ -2,14 +2,25 @@
 import uvicorn
 from dotenv import load_dotenv
 from fastapi import FastAPI, File, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 from graph_generator import generate_graph
 
 
 load_dotenv(".env")
 
+origins = ["http://localhost:3000"]
+
 app = FastAPI()
 
-@app.post("/generate_graph/")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.post("/generate_graph")
 async def create_upload_file(file: UploadFile = File(...)):
 
     generate_graph(file)

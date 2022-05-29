@@ -1,0 +1,22 @@
+{
+  "name": "visualizer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "../../visualizer/node_modules/.bin/next dev",
+    "build": "../../visualizer/node_modules/.bin/next build",
+    "start": "../../visualizer/node_modules/.bin/next start",
+    "lint": "../../visualizer/node_modules/.bin/next lint"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "graphviz-react": "^1.2.0",
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
+  },
+  "devDependencies": {
+    "eslint": "8.16.0",
+    "eslint-config-next": "12.1.6"
+  }
+}
